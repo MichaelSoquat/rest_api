@@ -30,6 +30,12 @@ ALLOWED_HOSTS = ['michaelsoquat.pythonanywhere.com',
 '127.0.0.1']
 
 
+CORS_ALLOWED_ORIGINS = [
+    "michaelsoquat.pythonanywhere.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:8080"
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'rest_api.urls'
